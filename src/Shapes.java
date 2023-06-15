@@ -1,25 +1,25 @@
 /**
- * (2) Alles bunt!
- * Programmiersprachen
- *      Java
- * Zielstellung
- *      – Einführung in JFC/Swing
- *      – Verwendung eines Layout-Managers
- * Aufgabenbeschreibung
- *      – es ist ein Fenster zu erstellen, dass verschiedene geometrische Formen
- *          auf einem Panel darstellt.
- *      – Es ist mindestens ein Kreis, ein Rechteck und eine Linie zu zeichnen.
- *      – Die geometrischen Formen [außer die Linie :-)] sollen jeweils farbig
- *          ausgefüllt sein.
- *      – Es ist ein geeigneter Layout-Manager zum Platzieren des Panels zu
- *          verwenden.
- * Hinweise zur Herangehensweise
- *      – siehe Swing Tutorial
- *      http://download.oracle.com/javase/tutorial/uiswing/index.html
- *      – zum Zeichnen der Figuren ist die paint-Methode eines Panels (JPanel) zu
- *      überschreiben. Siehe dazu
- *      http://openbook.galileocomputing.de/javainsel/
- *      Punkt 14.9.3 Zeichnen von Inhalten auf ein JFrame
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 
 
@@ -28,19 +28,27 @@ import java.awt.*;
 
 public class Shapes extends JFrame {
 
-    public Shapes(){
-        setTitle("Alles Bunt"); // window title
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // action if closed the window
-        setLayout(new BorderLayout()); // Layout-Manager
-        setSize(1000, 400); // window size
-        setVisible(true); // window visibility
+    private String title = "Alles Bunt";
+    private BorderLayout layout = new BorderLayout();
+    private String bLayout = layout.CENTER;
+    private int setFrameWidth = 1000;
+    private int setFrameHeight = 400;
+    private boolean setFrameVisibility = true;
+    private ImageIcon icon = new ImageIcon("icon/geometric-shape.png");
 
-        //Window icon
-        ImageIcon icon = new ImageIcon("icon/geometric-shape.png");
+
+
+    public Shapes(){
+        setTitle(title); // window title
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // action if closed the window
+        setLayout(layout); // Layout-Manager
+        setSize(setFrameWidth, setFrameHeight); // window size
+        setVisible(setFrameVisibility); // window visibility
+
+        // set Window icon
         setIconImage(icon.getImage());
 
         JPanel panel = new Panel();
-        String bLayout = BorderLayout.CENTER;
         add(panel, bLayout);
     }
 
