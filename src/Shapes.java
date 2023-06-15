@@ -40,7 +40,8 @@ public class Shapes extends JFrame {
         setIconImage(icon.getImage());
 
         JPanel panel = new Panel();
-        add(panel, BorderLayout.CENTER);
+        String bLayout = BorderLayout.CENTER;
+        add(panel, bLayout);
     }
 
     public static void main(String[] args) {
@@ -67,5 +68,4 @@ public class Shapes extends JFrame {
             gfx2d.drawLine(800,200,900,300);
         }
     }
-
 }
